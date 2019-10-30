@@ -1,29 +1,29 @@
 build:
+  environment:
+    node: 12
   services:
     mongo: 4
 
-  environment:
-    node: 12
-    variables:
-      NODE_ENV: 'test'
-      DB_NAME: 'test'
-      JWT_SECRET: '6d0d87cdac08aa35c5885702c4ddf190'
-      JWT_ISSUER: 'cake.faxity.se'
-      JWT_EXPIRES_IN: '15m'
-      JWT_MAX_AGE: '1d'
-
   nodes:
-    analysis:
-      tests:
-        override:
-          - js-scrutinizer-run
     coverage:
+      environment:
+        variables:
+          NODE_ENV: 'test'
+          DB_NAME: 'test'
+          JWT_SECRET: '6d0d87cdac08aa35c5885702c4ddf190'
+          JWT_ISSUER: 'cake.faxity.se'
+          JWT_EXPIRES_IN: '15m'
+          JWT_MAX_AGE: '1d'
       tests:
         override:
           - command: yarn test
             coverage:
               file: coverage/clover.xml
               format: clover
+    analysis:
+      tests:
+        override:
+          - js-scrutinizer-run
 
 filter:
   paths:
