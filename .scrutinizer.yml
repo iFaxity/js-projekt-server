@@ -12,6 +12,10 @@ build:
       JWT_EXPIRES_IN: '15m'
       JWT_MAX_AGE: '1d'
 
+  analysis:
+    tests:
+      override:
+        - js-scrutinizer-run
   tests:
     override:
       - command: yarn test
