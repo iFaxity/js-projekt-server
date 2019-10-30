@@ -1,0 +1,35 @@
+{
+  "private": true,
+  "name": "server",
+  "version": "1.0.0",
+  "scripts": {
+    "init-db": "node bin/init",
+    "prestart": "npm run init-db",
+    "start": "export NODE_ENV='production' && node bin/www",
+    "predev": "npm run init-db",
+    "dev" : "export NODE_ENV='development' && node bin/www",
+    "test": "export NODE_ENV='test' && nyc --reporter=text --reporter=html --reporter=clover mocha --file test/setup.js test/**/*.js",
+    "posttest": "rm -rf .nyc_output"
+  },
+  "dependencies": {
+    "@ifaxity/env": "^1.0.4",
+    "@ifaxity/jwt": "^1.1.0",
+    "@koa/cors": "^3.0.0",
+    "@koa/router": "^8.0.1",
+    "bcrypt": "^3.0.6",
+    "http-errors": "^1.7.3",
+    "koa": "^2.8.1",
+    "koa-bodyparser": "^4.2.1",
+    "koa-conditional-get": "^2.0.0",
+    "koa-etag": "^3.0.0",
+    "koa-morgan": "^1.0.1",
+    "mongodb": "^3.3.3",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1"
+  }
+}
