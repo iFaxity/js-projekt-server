@@ -1,9 +1,9 @@
 build:
+  services:
+    mongo: 4
+
   environment:
     node: 12
-    services:
-      mongo: 4
-
     variables:
       NODE_ENV: 'test'
       DB_NAME: 'test'
