@@ -24,14 +24,14 @@ const DEPOT_ITEMS = [
   {
     title: 'Prinsesstårta',
     price: 20,
-    rate: 1.003,
-    variance: 0.8,
+    rate: 1.002,
+    variance: 0.9,
     image: 'https://www.svtstatic.se/image-cms/svtse/1537272885/play/timjan-tupp-och-tarta/article19351343.svt/alternates/medium/prinsesstarta-jpg',
   },
   {
     title: 'Semla',
     price: 15,
-    rate: 1.004,
+    rate: 1.003,
     variance: 1.2,
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6PK5gO8boaH79Qqz0I36y4IeZdH1-AerXWAFOvkbSXRtxt5KWaw&s',
   },
