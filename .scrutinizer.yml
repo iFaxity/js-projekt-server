@@ -18,11 +18,12 @@ build:
         override:
           - js-scrutinizer-run
     coverage:
-      override:
-        - command: yarn test
-          coverage:
-            file: coverage/clover.xml
-            format: clover
+      tests:
+        override:
+          - command: yarn test
+            coverage:
+              file: coverage/clover.xml
+              format: clover
 
 filter:
   paths:
