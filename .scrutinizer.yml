@@ -18,6 +18,3 @@ build:
         coverage:
           file: coverage/clover.xml
           format: clover
-
-filter:
-  paths: [ 'bin/*', 'db/*', 'lib/*', 'routes/*' ]
